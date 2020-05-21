@@ -1,12 +1,5 @@
 DROP DATABASE IF EXISTS exampledb;
 CREATE DATABASE exampledb;
 
-USE eygnwwmhb7q9p28a;
-CREATE TABLE example
-(
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	example_name VARCHAR(100) not null
-);
-
 DROP DATABASE IF EXISTS testdb;
 CREATE DATABASE testdb;
