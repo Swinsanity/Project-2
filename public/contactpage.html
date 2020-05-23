@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/stylesheet1.css">
+    <title>Contact</title>
+</head>
+
+
+<body>
+    <header id="maintopheader">
+        <div class="container">
+            <a href="/contact" id="name">Contact</a>
+            <nav>
+                <a href="/home">Home</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div id="maincontainer" class="container">
+        <section class="mainsection">
+            <h2>Contact Us Here</h2>
+            <form>
+                <label for="name">Subject</label>
+                <input type="text" id="subject" placeholder="subject of email"> <br>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="email@email.com"> <br>
+                <label for="message">Message</label>
+                <textarea name="text" id="text" cols="30" rows="10"></textarea> <br>
+                <button class="btn btn-grey btn-block" type="submit" id="submit">Submit</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        $('form').on('submit', (e) => {
+            e.preventDefault();
+
+            const email = $('#email').val().trim();
+            console.log(email);
+            const subject = $('#subject').val().trim();
+            console.log(subject);
+            const text = $('#text').val().trim();
+            console.log(text);
+
+            const data = {
+                email,
+                subject,
+                text
+            };
+            console.log(data);
+
+            $.post('/email', data, function () {
+                console.log('Server recieved data');
+                window.location.reload();
+            });
+        });
+
+    </script>
+</body>
+
+</html>
