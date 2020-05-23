@@ -1,3 +1,4 @@
+
 require('dotenv').config();
 const express = require('express');
 const sendMail = require('./routes/mail');
@@ -5,6 +6,10 @@ const path = require('path');
 var exphbs = require("express-handlebars");
 var session = require('express-session');
 var bodyParser = require('body-parser');
+=======
+require("dotenv").config();
+var express = require("express");
+var exphbs = require("express-handlebars");
 
 var db = require("./models");
 
@@ -12,6 +17,7 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 // Middleware
+
 
 app.use(session({
 	secret: 'secret',
