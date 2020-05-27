@@ -1,6 +1,6 @@
 
 require('dotenv').config();
-const sendMail = require('./routes/mail');
+// const sendMail = require('./routes/mail');
 var db = require("../models");
 
 module.exports = function (app) {
