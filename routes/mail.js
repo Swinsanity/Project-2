@@ -5,10 +5,10 @@ require('dotenv').config();
 const nodemailer = require('nodemailer');
 const mailgun = require('nodemailer-mailgun-transport');
 
+
 // ==============================================================================
 // NODEMAILER CONFIGURATION
 // ==============================================================================
-//const auth = mailgun({apiKey: a, domain: b});
 
 const auth = {
     auth: {
@@ -28,7 +28,7 @@ const sendMail = (email, subject, text, cb) => {
 
     const mailOptions={
         from: email,
-        to: 'jobmancer@email.com',
+        to: 'valuecraftofficial@gmail.com',
         subject: subject,
         text: text
     };
